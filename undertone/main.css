@@ -1,0 +1,430 @@
+/*Somehow my Photoshop doesn't show the fonts, so I decided to use one that I like, hope it's ok =)*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*This code is for RESETING CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/img/mainBackground.jpg');
+    z-index: 2;
+    animation: animationForBody 1s ease-in forwards;
+}
+.safeArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 71.91vw;
+    background-color: transparent;
+}
+.main {
+    position: relative;
+    height: 52.2vh;
+    width: 65.6vw;
+    object-fit: cover;
+    margin: 3.4%, 2.9%;
+    border: solid black 0.5vh;
+    overflow: hidden;
+    background-color: white;
+}
+.frame1img {
+    height: 52.4vh;
+    width: 67vw;
+    display: flex;
+    justify-content: center;
+    transform: scale(1.25);
+    transform-origin: 70%;
+    animation: animationForFrame1Img 1.2s 4s ease-in forwards;
+}
+.white {
+    position: absolute;
+    height: 52.4vh;
+    width: 66vw;
+    transform: translate(-66vw);
+    z-index: 1;
+    animation: aniWhite 1.2s 4s ease-in forwards;
+}
+.commentForFrame1 {
+    position: absolute;
+    margin-top: 13.3vh;
+    margin-left: 27px;
+    padding-bottom: 4vh;
+    margin-bottom: 4vh;
+    opacity: 0;
+    width: 28.5vw;
+    font-weight: bold;
+    z-index: 10;
+    transform: translate(-30vw);
+    animation: animationForFrame1comment 2s 3s ease forwards;
+}
+.kitchnLogo {
+    position: relative;
+    align-items: center;
+    width: 7vw;
+    overflow: hidden;
+}
+sup {
+    font-size: x-small; 
+    vertical-align: super;
+}
+
+body {
+    font-family: 'Roboto';
+    font-size: 2vh;
+}
+
+.wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+.bespokeText {
+    position: absolute;
+    z-index: 22;
+    margin-top: 1.6vh;
+    margin-right: 2.7vw;
+    color: white;
+    font-weight: bold;
+    text-shadow: black 1px 0 5px;
+}
+.samsungLogo {
+    position: absolute;
+    z-index: 10;
+    vertical-align: middle;
+    /* width: 9.7vw; */
+    width: 90.16px;
+    height: 14.6px;
+    margin-top: 2vh;
+    margin-left: 27px;
+    transform: translate(-25vw, 10vh);
+    animation: animationForFrame1Samsung 2s 1s ease-in-out forwards;
+}
+.shopNow {
+    position: absolute;
+    z-index: 10;
+    margin-top: 45vh;
+    margin-left: 27px;
+    width: 10.9vw;
+    height: 6.2vh;
+    background: none;
+    border: none;
+    border: solid 2px black;
+    border-radius: 40px;
+    color: black;
+    text-shadow: rgb(143, 143, 143) 1px 0 5px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    animation-name: animationForFrame1Shop, infiniteScale;
+    animation-duration: 1.8s,2s;
+    animation-delay: 5s,5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1,infinite;
+    animation-direction: normal,alternate;
+    animation-fill-mode: forwards;
+}
+.shopNow:hover {
+    scale: 1.1;
+    animation-play-state: paused;
+}
+
+.carousel {
+    position: absolute;
+    margin-top: 17.5vh;
+    margin-left: 27px;
+    width: 28.5vw;
+    height: 20vw;
+    font-size: 70%;
+    z-index: 10;
+    animation: animationForBespokeText 6s ease-in 1 forwards;
+}
+.frameSlide {
+    display: none;
+    z-index: 9;
+    position: absolute;
+    align-items: right;
+    height: 52.4vh;
+    width: 30vw;
+    transform: translateX(123%);
+}
+.readMore {
+    margin: 3px 0px;
+    font-size: 1.4vh;
+    color: grey;
+    cursor: pointer;
+}
+.arrows {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 200;
+    margin: 40vh 0 0 22px;
+    font-size: 1.4vh;
+    animation: animationForBespokeText 6s ease-in 1 forwards;
+}
+.previous {
+    border: none;
+    cursor: pointer;
+}
+.next {
+    border: none;
+    cursor: pointer;
+}
+.previousImg {
+    border: none;
+    height: 1.4vh;
+}
+.nextImg {
+    border: none;
+    height: 1.4vh;
+}
+
+.frameSlideActive {
+    opacity: 0;
+    z-index: 20;
+    position: absolute;
+    align-items: right;
+    height: 52.4vh;
+    width: 30vw;
+    transform: translateX(123%);
+    animation: animationForFrameSlide 1s ease-in 1 forwards;
+    object-fit: cover;
+}
+.carouselActiveNext {
+    opacity: 0;
+    animation: animationForFrameTextNext 0.7s ease-in 1 forwards;
+}
+.carouselActivePrev {
+    opacity: 0;
+    animation: animationForFrameTextPrev 0.7s ease-in 1 forwards;
+}
+.arrowMouseDown {
+    scale: 1;
+    opacity: 1;
+    animation: returnNormalArrow 0.5s ease 1 forwards;
+}
+
+/*ANIMATIONS*/
+@keyframes returnNormalArrow {
+    0.1% {
+        scale: 0.9;
+        opacity: 0.8;
+    }
+    to {
+        scale: 0.7;
+        opacity: 0.5;
+    }
+}
+@keyframes animationForFrameTextNext {
+    from {
+        transform: translate(3vw);
+        opacity: 0.1;
+    }
+    to {
+        transform: translate(0vw);
+        opacity: 1;
+    }
+}
+@keyframes animationForFrameTextPrev {
+    from {
+        transform: translate(-3vw);
+        opacity: 0.3;
+    }
+    to {
+        transform: translate(0vw);
+        opacity: 1;
+    }
+}
+@keyframes animationForFrameSlide {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes aniWhite {
+    to {
+        transform: translate(-44%);
+    }
+}
+@keyframes animationForBody {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+@keyframes animationForFrame1Img {
+    to {
+        transform: translateX(13%) scaleX(0.75);
+    }
+}
+@keyframes animationForFrame1Samsung {
+    50% {
+        transform: translate(0vw, 10vh);
+    }
+    to {
+        transform: translate(0vw, 0vh);
+    }
+}
+@keyframes animationForFrame1Shop {
+    
+    to {
+        opacity: 1;
+    }
+}
+@keyframes infiniteScale {
+    to {
+        transform: scale(1.1);
+    }
+}
+@keyframes animationForFrame1comment {
+    from {
+        transform: translate(-30vw);
+    }
+    10% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+        transform: translate(0vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-7vh);
+    }
+}
+@keyframes animationForBespokeText {
+    from {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/*Some MEDIA QUERIES for better responsiveness*/
+@media  (width <= 780px){
+    .carousel {
+        font-size: 1.5vh;
+    }
+    .kitchnLogo {
+        width: 8vh;
+    }
+    .commentForFrame1 {
+        font-size: 2vh;
+    }
+    .arrows {
+        font-size: 2vh;
+    } 
+    .previousImg, .nextImg, .previousImg, .nextImg{
+        font-size: 2vh;
+        width: 1.55vw;
+        height: 2vh;
+    }
+}
+
+@media  (1400px >= width >= 780px){
+    .carousel{
+        font-size: 1.9vh;
+        margin-top: 17vh;
+    }
+    .kitchnLogo {
+        width: 9.5vh;
+    }
+    .commentForFrame1 {
+        margin-top: 13.2vh;
+        font-size: 2.3vh;
+    }
+    .arrows {
+        font-size: 1.9vh;
+    } 
+    .previousImg, .nextImg, .previousImg, .nextImg{
+        font-size: 2vh;
+        width: 1.55vw;
+        height: 2vh;
+    }
+}
+
+@media  (width >= 1400px){
+    .carousel{
+        font-size: 2.2vh;
+        width: 20vw;
+    }
+    .kitchnLogo {
+        width: 10.8vh;
+    }
+    .commentForFrame1 {
+        font-size: 2.7vh;
+        width: 20vw;
+    }
+    .arrows {
+        font-size: 2.2vh;
+    } 
+    .previousImg, .nextImg, .previousImg, .nextImg{
+        font-size: 2.2vh;
+        width: 1.7vw;
+        height: 2.2vh;
+    }
+}
+
+/*
+Now that the project is almost ready, I figured that it would be better to get rid of all the position:absolute;, put display:grid; on the main area and
+add max and min height,  and max and min width on it (in media queries) to make the sidebars on top and on the side shrink first instead of shrinking the
+whole window and better (more even) placement of all the elements. It would result in a so much better responsiveness of a web page.
+Doing this, however, would probably take a lot of time, that I don't have, since I would need to completely rewrite the css code. I just hope that it isn't 
+the most important thing to you. Obviously, if this project would go in a production, I would rewrite the css code =)
+*/
